@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'reviews/new'
   # # Read all
   # get "restaurants", to: "restaurants#index"
   # # Create
@@ -8,6 +7,6 @@ Rails.application.routes.draw do
   # # Read one - The `show` route needs to be *after* `new` route.
   # get "restaurants/:id", to: "restaurants#show", as: :restaurant
   resources :restaurants do
-    resources :reviews, only: [:new]
+    resources :reviews, only: [:new, :create, :show, :index]
   end
 end
