@@ -1,0 +1,6 @@
+<h1 class="text-center py-5">All restaurants</h1>
+<ul>
+<% @restaurants.each do |restaurant| %>
+<li><%= link_to restaurant.name, restaurant_path(restaurant)%> (<%= restaurant.category %>)</li>
+<% end %>
+</ul>
